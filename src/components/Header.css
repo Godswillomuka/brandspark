@@ -1,0 +1,232 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  padding: 0.75rem 0;
+}
+
+/* Keep header consistent - no white background change */
+.header--scrolled {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(59, 130, 246, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header--scrolled .header__content {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+.header__logo:hover {
+  transform: scale(1.05);
+}
+
+.header__logo:focus {
+  outline: none;
+}
+
+.header__logo-icon {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header__logo:hover .header__logo-icon {
+  transform: rotate(5deg);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.header__logo-svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: white;
+}
+
+.header__logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #F8FAFC;
+  transition: color 0.3s ease;
+  letter-spacing: -0.02em;
+}
+
+/* Keep text white always */
+.header--scrolled .header__logo-text {
+  color: #F8FAFC;
+}
+
+.header__nav {
+  display: none;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .header__nav {
+    display: flex;
+  }
+}
+
+.header__nav-link {
+  font-weight: 600;
+  color: #F8FAFC;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.header__nav-link:focus {
+  outline: none;
+}
+
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #60A5FA, #93C5FD);
+  transition: width 0.3s ease;
+}
+
+.header__nav-link:hover::after {
+  width: 100%;
+}
+
+.header__nav-link:hover {
+  color: #60A5FA;
+}
+
+/* Keep nav links white always */
+.header--scrolled .header__nav-link {
+  color: #F8FAFC;
+}
+
+.header--scrolled .header__nav-link:hover {
+  color: #60A5FA;
+}
+
+.header--scrolled .header__nav-link::after {
+  background: linear-gradient(135deg, #60A5FA, #93C5FD);
+}
+
+.header__mobile-toggle {
+  display: block;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(59, 130, 246, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.header__mobile-toggle:hover {
+  background: rgba(59, 130, 246, 0.2);
+  transform: scale(1.05);
+}
+
+.header__mobile-toggle:focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .header__mobile-toggle {
+    display: none;
+  }
+}
+
+.header__mobile-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #F8FAFC;
+  transition: color 0.3s ease;
+}
+
+/* Keep mobile icon white always */
+.header--scrolled .header__mobile-icon {
+  color: #F8FAFC;
+}
+
+.header__mobile-nav {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+@media (min-width: 768px) {
+  .header__mobile-nav {
+    display: none;
+  }
+}
+
+.header__mobile-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: #F8FAFC;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  outline: none;
+}
+
+.header__mobile-link:hover {
+  color: #60A5FA;
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateX(4px);
+}
+
+.header__mobile-link:focus {
+  outline: none;
+}
