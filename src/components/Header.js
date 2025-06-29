@@ -46,7 +46,7 @@ const Header = () => {
             <div className="header__logo-icon">
               <Zap className="header__logo-svg" />
             </div>
-            <span className="header__logo-text">Brandblast</span>
+            <span className="header__logo-text">BrandSpark</span>
           </button>
 
           <nav className="header__nav">
