@@ -3,7 +3,7 @@ import Team from './Team';
 import Careers from './Careers';
 import Blog from './Blog';
 import Help from './Help';
-import DesignGuidelines from './DesignGuidelines';
+// import DesignGuidelines from './DesignGuidelines';
 import FilePreparation from './FilePreparation';
 import Shipping from './Shipping';
 import Returns from './Returns';
@@ -34,9 +34,9 @@ const PageManager = ({ currentPage, onBack }) => {
     return <Help onBack={onBack} />;
   }
 
-  if (currentPage === 'design-guidelines') {
-    return <DesignGuidelines onBack={onBack} />;
-  }
+  // if (currentPage === 'design-guidelines') {
+  //   return <DesignGuidelines onBack={onBack} />;
+  // }
 
   if (currentPage === 'file-preparation') {
     return <FilePreparation onBack={onBack} />;
